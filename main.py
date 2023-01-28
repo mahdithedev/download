@@ -7,7 +7,7 @@ import sys
 
 def download_and_move_files(uri, file_extension, start, end , storage):
     # download the webpage i use curl beacuse i just want to stick to the stdlib of python
-    webpage = subprocess.check_output(["curl" , uri])
+    webpage = subprocess.check_output(["curl" , uri]).decode("utf-8")
     # extract all URLs that end with the specified file extension
     pattern = f"(https?:\/\/[^\s]+){file_extension}"
 

@@ -35,7 +35,7 @@ def download_and_move_files(uri, file_extension, start, end , storage):
         try:
             subprocess.run(["curl", "-o", filename, file_url], check=True , )
             if storage:
-                subprocess.run(["mv", filename, storage + filename], check=True)
+                subprocess.run(["mv", filename, storage], check=True)
             print(f"\033[92mDownloaded {filename} successfully.\033[00m ")
         except subprocess.CalledProcessError as e:
             print(f"\033[91mFailed to download {filename}. Error: {e}\033[00m")

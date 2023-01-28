@@ -1,15 +1,13 @@
 import argparse
 import os
 import re
-import requests
 from urllib.parse import urlparse
 import subprocess
 import sys
 
 def download_and_move_files(uri, file_extension, start, end , storage):
-    # download the webpage
-    response = requests.get(uri)
-    webpage = response.text
+    # download the webpage i use curl beacuse i just want to stick to the stdlib of python
+    webpage = subprocess.check_output(["curl" , uri])
     # extract all URLs that end with the specified file extension
     pattern = f"(https?:\/\/[^\s]+){file_extension}"
 

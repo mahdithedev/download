@@ -51,7 +51,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.envorinment == "Termux":
-        storage = "/sdcard/DCIM"
+        storage = "/storage/DCIM"
     else:
         storage = None
 
